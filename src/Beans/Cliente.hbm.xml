@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/10/2015 21:05:40 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Beans.Cliente" table="Cliente" catalog="rbcmi">
+        <id name="idCliente" type="java.lang.Integer">
+            <column name="idCliente" />
+            <generator class="identity" />
+        </id>
+        <property name="nmCliente" type="string">
+            <column name="nmCliente" length="60" not-null="true" />
+        </property>
+        <property name="cpfCliente" type="string">
+            <column name="cpfCliente" length="20" />
+        </property>
+        <property name="endCliente" type="string">
+            <column name="endCliente" length="120" />
+        </property>
+        <property name="telCliente" type="string">
+            <column name="telCliente" length="20" />
+        </property>
+        <property name="emailCliente" type="string">
+            <column name="emailCliente" length="50" />
+        </property>
+        <set name="ocorrencias" inverse="true">
+            <key>
+                <column name="idCliente" not-null="true" />
+            </key>
+            <one-to-many class="Beans.Ocorrencia" />
+        </set>
+    </class>
+</hibernate-mapping>

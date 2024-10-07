@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/10/2015 21:05:40 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Beans.Tecnico" table="Tecnico" catalog="rbcmi">
+        <id name="idTecnico" type="java.lang.Integer">
+            <column name="idTecnico" />
+            <generator class="identity" />
+        </id>
+        <property name="nmTecnico" type="string">
+            <column name="nmTecnico" length="60" not-null="true" />
+        </property>
+        <property name="tel1tecnico" type="string">
+            <column name="tel1Tecnico" length="20" />
+        </property>
+        <property name="tel2tecnico" type="string">
+            <column name="tel2Tecnico" length="20" />
+        </property>
+        <property name="emailTecnico" type="string">
+            <column name="emailTecnico" length="50" />
+        </property>
+        <property name="cpfTecnico" type="string">
+            <column name="cpfTecnico" length="20" />
+        </property>
+        <set name="ocorrencias" inverse="true">
+            <key>
+                <column name="idTecnico" />
+            </key>
+            <one-to-many class="Beans.Ocorrencia" />
+        </set>
+    </class>
+</hibernate-mapping>

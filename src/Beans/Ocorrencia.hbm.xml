@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/10/2015 21:05:40 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Beans.Ocorrencia" table="Ocorrencia" catalog="rbcmi">
+        <id name="idOcorrencia" type="java.lang.Integer">
+            <column name="idOcorrencia" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="Beans.Cliente" fetch="select">
+            <column name="idCliente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="caso" class="Beans.Caso" fetch="select">
+            <column name="codCaso" />
+        </many-to-one>
+        <many-to-one name="tecnico" class="Beans.Tecnico" fetch="select">
+            <column name="idTecnico" />
+        </many-to-one>
+        <property name="dtAbertura" type="date">
+            <column name="dtAbertura" length="10" not-null="true" />
+        </property>
+        <property name="dtFechamento" type="date">
+            <column name="dtFechamento" length="10" />
+        </property>
+        <property name="tmpConserto" type="time">
+            <column name="tmpConserto" length="8" />
+        </property>
+        <property name="valorConserto" type="big_decimal">
+            <column name="valorConserto" precision="10" />
+        </property>
+        <property name="priOcorrencia" type="int">
+            <column name="priOcorrencia" not-null="true" />
+        </property>
+        <property name="estOcorrencia" type="int">
+            <column name="estOcorrencia" not-null="true" />
+        </property>
+        <property name="obsOcorrencia" type="string">
+            <column name="obsOcorrencia" />
+        </property>
+        <property name="probOcorrencia" type="string">
+            <column name="probOcorrencia" length="100" />
+        </property>
+        <property name="desEquipamento" type="string">
+            <column name="desEquipamento" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

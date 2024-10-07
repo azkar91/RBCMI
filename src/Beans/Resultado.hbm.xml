@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/10/2015 21:05:40 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Beans.Resultado" table="Resultado" catalog="rbcmi">
+        <id name="idResultado" type="int">
+            <column name="idResultado" />
+            <generator class="increment" />
+        </id>
+        <property name="desResultado" type="string">
+            <column name="desResultado" length="255" />
+        </property>
+        <set name="casos" inverse="true">
+            <key>
+                <column name="idResultado" not-null="true" />
+            </key>
+            <one-to-many class="Beans.Caso" />
+        </set>
+    </class>
+</hibernate-mapping>

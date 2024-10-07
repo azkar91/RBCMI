@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/10/2015 21:05:40 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Beans.Caso" table="Caso" catalog="rbcmi">
+        <id name="idCaso" type="java.lang.Integer">
+            <column name="idCaso" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="resultado" class="Beans.Resultado" fetch="select">
+            <column name="idResultado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="solucao" class="Beans.Solucao" fetch="select">
+            <column name="idSolucao" not-null="true" />
+        </many-to-one>
+        <property name="endDns" type="string">
+            <column name="endDns" length="30" />
+        </property>
+        <property name="endIp" type="string">
+            <column name="endIp" length="30" />
+        </property>
+        <property name="estConexaorede" type="string">
+            <column name="estConexaorede" length="30" />
+        </property>
+        <property name="estDriverrede" type="string">
+            <column name="estDriverrede" length="30" />
+        </property>
+        <property name="estRjConector" type="string">
+            <column name="estRjConector" length="30" />
+        </property>
+        <property name="tipoConexaorede" type="string">
+            <column name="tipoConexaorede" length="30" />
+        </property>
+        <property name="tipoConexaointernet" type="string">
+            <column name="tipoConexaointernet" length="30" />
+        </property>
+        <property name="infraRede" type="string">
+            <column name="infraRede" length="50" />
+        </property>
+        <property name="estSoimpressora" type="string">
+            <column name="estSoimpressora" length="30" />
+        </property>
+        <property name="estDriverimpressora" type="string">
+            <column name="estDriverimpressora" length="30" />
+        </property>
+        <property name="estLedimpressora" type="string">
+            <column name="estLedimpressora" length="30" />
+        </property>
+        <property name="estGeralimpressora" type="string">
+            <column name="estGeralimpressora" length="50" />
+        </property>
+        <property name="tipoSoimpressora" type="string">
+            <column name="tipoSoimpressora" length="30" />
+        </property>
+        <property name="tipoConexaoimpressora" type="string">
+            <column name="tipoConexaoimpressora" length="30" />
+        </property>
+        <property name="nivelCartuchoimpressora" type="string">
+            <column name="nivelCartuchoimpressora" length="30" />
+        </property>
+        <property name="filaImpressao" type="string">
+            <column name="filaImpressao" length="30" />
+        </property>
+        <property name="qtdDispositivoaudio" type="string">
+            <column name="qtdDispositivoaudio" length="30" />
+        </property>
+        <property name="estDriversom" type="string">
+            <column name="estDriversom" length="30" />
+        </property>
+        <property name="estDispositivoaudio" type="string">
+            <column name="estDispositivoaudio" length="30" />
+        </property>
+        <property name="sitSomnaofunciona" type="string">
+            <column name="sitSomnaofunciona" length="50" />
+        </property>
+        <property name="soArquitetura" type="java.lang.Integer">
+            <column name="soArquitetura" />
+        </property>
+        <property name="hdEspacolivre" type="double">
+            <column name="hdEspacolivre" precision="10" />
+        </property>
+        <property name="hwNovoinstalado" type="string">
+            <column name="hwNovoinstalado" length="3" />
+        </property>
+        <property name="msgErro" type="string">
+            <column name="msgErro" length="100" />
+        </property>
+        <property name="qtdRam" type="double">
+            <column name="qtdRam" precision="10" />
+        </property>
+        <property name="estLedhd" type="string">
+            <column name="estLedhd" length="30" />
+        </property>
+        <property name="gabSujeira" type="string">
+            <column name="gabSujeira" length="30" />
+        </property>
+        <property name="qtdCores" type="java.lang.Integer">
+            <column name="qtdCores" />
+        </property>
+        <property name="soInstalado" type="string">
+            <column name="soInstalado" length="30" />
+        </property>
+        <property name="estAntivirus" type="string">
+            <column name="estAntivirus" length="45" />
+        </property>
+        <property name="estSistemaoperacional" type="string">
+            <column name="estSistemaoperacional" length="30" />
+        </property>
+        <property name="cpuVelocidade" type="double">
+            <column name="cpuVelocidade" precision="10" />
+        </property>
+        <property name="bipBios" type="string">
+            <column name="bipBios" length="30" />
+        </property>
+        <property name="dataSistema" type="string">
+            <column name="dataSistema" length="30" />
+        </property>
+        <property name="hdBios" type="string">
+            <column name="hdBios" length="30" />
+        </property>
+        <property name="gabLedfuncionamento" type="string">
+            <column name="gabLedfuncionamento" length="30" />
+        </property>
+        <property name="estMonitor" type="string">
+            <column name="estMonitor" length="30" />
+        </property>
+        <property name="tempCpu" type="double">
+            <column name="tempCpu" precision="10" />
+        </property>
+        <property name="gabBotaopower" type="string">
+            <column name="gabBotaopower" length="30" />
+        </property>
+        <property name="gabCabeamentointerno" type="string">
+            <column name="gabCabeamentointerno" length="30" />
+        </property>
+        <property name="condCabeamentoenergia" type="string">
+            <column name="condCabeamentoenergia" length="30" />
+        </property>
+        <property name="psuVoltagem" type="string">
+            <column name="psuVoltagem"  length="10"/>
+        </property>
+        <property name="equipProtecaoenergia" type="string">
+            <column name="equipProtecaoenergia" length="30" />
+        </property>
+        <property name="monRiscoscores" type="string">
+            <column name="monRiscoscores" length="30" />
+        </property>
+        <property name="tempVga" type="double">
+            <column name="tempVga" precision="10" />
+        </property>
+        <property name="tipoVga" type="string">
+            <column name="tipoVga" length="30" />
+        </property>
+        <property name="estDrivervideo" type="string">
+            <column name="estDrivervideo" length="30" />
+        </property>
+        <property name="pcReinicia" type="string">
+            <column name="pcReinicia" length="30" />
+        </property>
+        <set name="ocorrencias" inverse="true">
+            <key>
+                <column name="codCaso" />
+            </key>
+            <one-to-many class="Beans.Ocorrencia" />
+        </set>
+    </class>
+</hibernate-mapping>
